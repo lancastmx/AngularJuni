@@ -11,4 +11,11 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'aprenAng';
+  setLightMode() {
+    document.body.classList.remove('dark-mode');
+  }
+
+  setDarkMode() {
+    document.body.classList.add('dark-mode');
+  }
 }

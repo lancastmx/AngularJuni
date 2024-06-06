@@ -1,0 +1,13 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+// Importar variables y mixins de Sass
+@import 'styles/variables';
+@import 'styles/mixins';
+@import 'styles/base';
+
+// Puedes agregar estilos globales adicionales aquí
+body {
+  font-family: 'Roboto', sans-serif;
+}
