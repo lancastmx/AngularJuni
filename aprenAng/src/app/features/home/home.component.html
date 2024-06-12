@@ -1,1 +1,14 @@
-<p>home works!</p>
+<div class="container mx-auto p-6">
+  <h1 class="text-3xl font-bold mb-6 text-center">Neumorphism Buttons with Icons</h1>
+  <div class="flex flex-wrap justify-center space-x-4">
+    <button class="neumorphism-btn" (click)="selectButton('button1')" [ngClass]="{'selected': selectedButton === 'button1'}">
+      <i class='bx bx-home'></i> Button 1
+    </button>
+    <button class="neumorphism-btn" (click)="selectButton('button2')" [ngClass]="{'selected': selectedButton === 'button2'}">
+      <i class='bx bx-user'></i> Button 2
+    </button>
+    <button class="neumorphism-btn" (click)="selectButton('button3')" [ngClass]="{'selected': selectedButton === 'button3'}">
+      <i class='bx bx-cog'></i> Button 3
+    </button>
+  </div>
+</div>

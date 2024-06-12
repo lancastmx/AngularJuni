@@ -15,3 +15,19 @@ a {
 .dark-mode {
   @include dark-mode;
 }
+.neumorphism-btn {
+  background: #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.neumorphism-btn:hover {
+  box-shadow: 4px 4px 8px #a3b1c6, -4px -4px 8px #ffffff;
+}
+
+.neumorphism-btn:active {
+  box-shadow: inset 8px 8px 16px #a3b1c6, inset -8px -8px 16px #ffffff;
+}

@@ -6,7 +6,9 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      'neomorphism': '8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff',
+    },
   },
   variants: {
     extend: {},
@@ -20,3 +22,18 @@ module.exports = {
 //   plugins: [],
 // }
 
+module.exports = {
+  purge: ['./src/**/*.{html,ts}'],
+  darkMode: false,
+  theme: {
+    extend: {
+      boxShadow: {
+        'neomorphism': '8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff',
+      },
+    },
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+};
