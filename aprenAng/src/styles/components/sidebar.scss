@@ -1,6 +1,35 @@
+// sidebar.scss
+
 @import '../variables';
+@import '../mixins';
 
 .sidebar {
-  background-color: $secondary-color;
-  color: $primary-color;
+  @include neomorph($light-bg-color);
+  color: $dark-text-color;
+
+  .sidebar-item {
+    @include neomorph($light-bg-color);
+    color: $primary-color;
+  }
+
+  .theme-switch {
+    margin-top: 20px;
+    label {
+      color: $primary-color;
+    }
+  }
+}
+
+body.dark-theme .sidebar {
+  @include neomorph($dark-bg-color);
+  color: $light-text-color;
+
+  .sidebar-item {
+    @include neomorph($dark-bg-color);
+    color: $light-text-color;
+  }
+
+  .theme-switch label {
+    color: $light-text-color;
+  }
 }

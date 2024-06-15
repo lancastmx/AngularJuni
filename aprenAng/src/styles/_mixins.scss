@@ -1,17 +1,46 @@
-// Mixins globales
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// styles/mixins.scss
+
+@import 'variables';
+
+// Mixin para el neomorfismo
+@mixin neomorph($bg-color) {
+  background: $bg-color;
+  border-radius: $neomorph-radius;
+  box-shadow:
+    $neomorph-shadow-size $neomorph-shadow-size $neomorph-shadow-size 0 $neomorph-shadow-dark,
+    (-$neomorph-shadow-size) (-$neomorph-shadow-size) $neomorph-shadow-size 0 $neomorph-shadow-light;
 }
 
-// Mixins para modos de color
-@mixin light-mode {
-  background-color: $light-bg;
-  color: $light-text;
+// Mixins para los temas
+@mixin light-theme {
+  background-color: $light-bg-color;
+  color: $light-text-color;
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
 }
 
-@mixin dark-mode {
-  background-color: $dark-bg;
-  color: $dark-text;
+@mixin dark-theme {
+  background-color: $dark-bg-color;
+  color: $dark-text-color;
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+}
+
+// Mixin para el fondo global
+@mixin global-background($color) {
+  background-color: $color;
+}
+
+// Mixin para el texto global
+@mixin global-text($color) {
+  color: $color;
+}
+
+// Mixins para tipografías
+@mixin primary-font {
+  font-family: $font-family-primary;
+}
+
+@mixin secondary-font {
+  font-family: $font-family-secondary;
 }

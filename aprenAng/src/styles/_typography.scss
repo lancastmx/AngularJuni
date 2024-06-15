@@ -1,0 +1,82 @@
+// styles/typography.scss
+
+@import 'variables';
+@import 'mixins';
+
+// Estilos para títulos con la fuente principal
+h1, h2, h3, h4, h5, h6 {
+  @include primary-font;
+  margin: 0 0 10px 0 !important;
+}
+
+h1 {
+  font-size: 2.5em !important;
+  color: $primary-color !important;
+}
+
+h2 {
+  font-size: 2em !important;
+  color: $primary-color !important;
+}
+
+h3 {
+  font-size: 1.75em !important;
+  color: $primary-color !important;
+}
+
+h4 {
+  font-size: 1.5em !important;
+  color: $primary-color !important;
+}
+
+h5 {
+  font-size: 1.25em !important;
+  color: $primary-color !important;
+}
+
+h6 {
+  font-size: 1em !important;
+  color: $primary-color !important;
+}
+
+// Estilos para párrafos con la fuente secundaria
+p {
+  @include secondary-font;
+  line-height: 1.6 !important;
+  margin: 0 0 10px 0 !important;
+}
+
+// Estilos para enlaces con la fuente principal
+a {
+  @include primary-font;
+  color: $primary-color !important;
+  text-decoration: none !important;
+  border-radius: $neomorph-radius !important;
+  padding: 5px 10px !important;
+  box-shadow:
+    $neomorph-shadow-size $neomorph-shadow-size $neomorph-shadow-size 0 $neomorph-shadow-dark ,
+    (-$neomorph-shadow-size) (-$neomorph-shadow-size) $neomorph-shadow-size 0 $neomorph-shadow-light !important;
+
+  &:hover {
+    text-decoration: underline !important;
+    box-shadow:
+      $neomorph-shadow-size $neomorph-shadow-size $neomorph-shadow-size 0 rgba(0, 0, 0, 0.5) ,
+      (-$neomorph-shadow-size) (-$neomorph-shadow-size) $neomorph-shadow-size 0 rgba(255, 255, 255, 0.5) !important;
+  }
+}
+
+// Estilos para listas con la fuente secundaria
+ul, ol {
+  @include secondary-font;
+  line-height: 1.6 !important;
+  margin: 0 0 10px 0 !important;
+  padding-left: 20px !important;
+}
+
+// Estilos para bloques de citas con la fuente secundaria
+blockquote {
+  @include secondary-font;
+  border-left: 5px solid $primary-color !important;
+  margin: 0 0 10px 0 !important;
+  padding-left: 10px !important;
+}

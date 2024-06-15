@@ -1,34 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: [
-    './src/**/*.html',
-    './src/**/*.ts',
-  ],
-  darkMode: false, // or 'media' or 'class'
+  purge: ['./src/**/*.{html,ts,scss}'],
+  darkMode: 'class', // Cambiar a 'class' para manejar el modo oscuro con clases
   theme: {
     extend: {
-      'neomorphism': '8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff',
-    },
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-}
-//   content: [],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// }
-
-module.exports = {
-  purge: ['./src/**/*.{html,ts}'],
-  darkMode: false,
-  theme: {
-    extend: {
+      colors: {
+        primary: '#d33c3c',
+        darkBg: '#000000',
+        lightBg: '#ffffff',
+        darkText: '#ffffff',
+        lightText: '#000000',
+      },
+      fontFamily: {
+        sans: ['Arial', 'sans-serif'],
+      },
       boxShadow: {
         'neomorphism': '8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff',
+      },
+      borderRadius: {
+        'neomorphism': '10px',
       },
     },
   },

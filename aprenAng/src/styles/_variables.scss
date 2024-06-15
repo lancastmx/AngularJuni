@@ -1,12 +1,20 @@
-// Variables globales
-$primary-color: #3498db;
-$secondary-color: #2ecc71;
-$font-family-primary: 'Roboto', sans-serif;
+// styles/variables.scss
 
-// Variables para modo claro
-$light-bg: #ffffff;
-$light-text: #473737;
+// Colores
+$primary-color: #d33c3c;
+$secondary-color: #000000;
+$dark-bg-color: #000000;
+$light-bg-color: #ffffff;
+$dark-text-color: #ffffff;
+$light-text-color: #000000;
 
-// Variables para modo oscuro
-$dark-bg: #2c3e50;
-$dark-text: #ecf0f1;
+// Fuentes
+$font-family-primary: 'Arial, sans-serif';
+$font-family-secondary: 'Georgia, serif';
+$font-size-base: 16px;
+
+// Neomorfismo
+$neomorph-shadow-light: rgba(255, 255, 255, 0.7);
+$neomorph-shadow-dark: rgba(0, 0, 0, 0.2);
+$neomorph-radius: 10px;
+$neomorph-shadow-size: 10px;

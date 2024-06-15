@@ -1,6 +1,13 @@
+// topbar.scss
+
 @import '../variables';
+@import '../mixins';
 
 .topbar {
-  background-color: $primary-color;
-  color: $secondary-color;
+  @include neomorph($primary-color);
+  color: $light-text-color;
+
+  .topbar-item {
+    color: $dark-text-color;
+  }
 }

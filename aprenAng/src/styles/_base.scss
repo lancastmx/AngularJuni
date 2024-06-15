@@ -1,33 +1,55 @@
+// styles/base.scss
+
+@import 'variables';
+@import 'mixins';
+@import 'typography';
+
+// Estilos básicos globales
 body {
-  font-family: $font-family-primary;
-  font-size: 16px;
-  color: $primary-color;
+  @include global-background($light-bg-color);
+  @include global-text($light-text-color);
+  @include primary-font;
+  font-size: $font-size-base !important;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
+// Estilos para enlaces
 a {
-  text-decoration: none;
   color: $primary-color;
+  text-decoration: none;
+  border-radius: $neomorph-radius;
+  padding: 5px 10px;
+  box-shadow:
+    $neomorph-shadow-size $neomorph-shadow-size $neomorph-shadow-size 0 $neomorph-shadow-dark,
+    (-$neomorph-shadow-size) (-$neomorph-shadow-size) $neomorph-shadow-size 0 $neomorph-shadow-light;
+
+  &:hover {
+    text-decoration: underline;
+    box-shadow:
+      $neomorph-shadow-size $neomorph-shadow-size $neomorph-shadow-size 0 rgba(0, 0, 0, 0.5),
+      (-$neomorph-shadow-size) (-$neomorph-shadow-size) $neomorph-shadow-size 0 rgba(255, 255, 255, 0.5);
+  }
 }
 
-.dark-mode {
-  @include dark-mode;
-}
-.neumorphism-btn {
-  background: #e0e0e0;
-  border-radius: 12px;
-  box-shadow: 8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff;
-  padding: 10px 20px;
-  font-size: 1rem;
-  transition: all 0.2s ease-in-out;
+// Definir temas
+.light-theme {
+  @include light-theme;
 }
 
-.neumorphism-btn:hover {
-  box-shadow: 4px 4px 8px #a3b1c6, -4px -4px 8px #ffffff;
-}
+.dark-theme {
+  @include dark-theme ;
 
-.neumorphism-btn:active {
-  box-shadow: inset 8px 8px 16px #a3b1c6, inset -8px -8px 16px #ffffff;
+  a {
+    color: $dark-text-color !important;
+    box-shadow:
+      $neomorph-shadow-size $neomorph-shadow-size $neomorph-shadow-size 0 rgba(255, 255, 255, 0.1),
+      (-$neomorph-shadow-size) (-$neomorph-shadow-size) $neomorph-shadow-size 0 rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      box-shadow:
+        $neomorph-shadow-size $neomorph-shadow-size $neomorph-shadow-size 0 rgba(255, 255, 255, 0.5),
+        (-$neomorph-shadow-size) (-$neomorph-shadow-size) $neomorph-shadow-size 0 rgba(0, 0, 0, 0.5);
+    }
+  }
 }

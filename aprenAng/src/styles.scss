@@ -1,11 +1,17 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 // Importar variables y mixins de Sass
 @import 'styles/variables';
 @import 'styles/mixins';
 @import 'styles/base';
+@import 'styles/typography';
+@import 'styles/components/sidebar';
+@import 'styles/components/topbar';
+
+// Importar fuentes
+@import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700&family=Georgia:wght@400;700&display=swap');
 
 // Puedes agregar estilos globales adicionales aquí
 body {

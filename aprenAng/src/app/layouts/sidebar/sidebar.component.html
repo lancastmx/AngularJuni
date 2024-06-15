@@ -1,1 +1,19 @@
-<p>sidebar works!</p>
+<div *ngFor="let item of menuItems" >
+  <div class="d-flex justify-content-around ">
+    <i class=" text-lg leading-relaxed px-3  bx {{ item.icon }}" *ngIf="!isCollapsed || showOnlyMainIcon"></i>
+    <p class=" text-lg leading-relaxed  w-full max-w-2xl {{ isCollapsed ? 'hidden' : '' }}"> {{ item.label }}</p> </div>
+  <ul class="boton-lista p-1" class="transition duration-3000 ease-in-out {{ isCollapsed ? 'w-16' : 'w-64' }}">
+    <li [routerLink]="subItem.link" class="d-flex justify-content-center p-2 " type="button" *ngFor="let subItem of item.subItems">
+      <a [routerLink]="subItem.link">
+        <i class=" text-lg leading-relaxed p-1 bx {{ subItem.icon }}" *ngIf="subItem.icon"></i>
+        <span class="text-lg leading-relaxed p-1" *ngIf="!isCollapsed">{{ subItem.label }}</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="theme-switch">
+  <label>
+    <input type="checkbox" (change)="toggleTheme($event)">
+    Dark Mode
+  </label>
+</div>
