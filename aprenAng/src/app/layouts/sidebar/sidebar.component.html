@@ -1,16 +1,18 @@
-<div *ngFor="let item of menuItems" >
-  <div class="d-flex justify-content-around ">
-    <i class=" text-lg leading-relaxed px-3  bx {{ item.icon }}" *ngIf="!isCollapsed || showOnlyMainIcon"></i>
-    <p class=" text-lg leading-relaxed  w-full max-w-2xl {{ isCollapsed ? 'hidden' : '' }}"> {{ item.label }}</p> </div>
-  <ul class="boton-lista p-1" class="transition duration-3000 ease-in-out {{ isCollapsed ? 'w-16' : 'w-64' }}">
-    <li [routerLink]="subItem.link" class="d-flex justify-content-center p-2 " type="button" *ngFor="let subItem of item.subItems">
-      <a [routerLink]="subItem.link">
-        <i class=" text-lg leading-relaxed p-1 bx {{ subItem.icon }}" *ngIf="subItem.icon"></i>
-        <span class="text-lg leading-relaxed p-1" *ngIf="!isCollapsed">{{ subItem.label }}</span>
+<div *ngFor="let item of menuItems" class="menu-item">
+  <div class="menu-header d-flex justify-content-around items-center">
+    <i class="menu-icon text-lg leading-relaxed px-3 bx {{ item.icon }}" *ngIf="!isCollapsed || showOnlyMainIcon"></i>
+    <p class="menu-label text-lg leading-relaxed w-full max-w-2xl {{ isCollapsed ? 'hidden' : '' }}"> {{ item.label }}</p>
+  </div>
+  <ul class="sub-menu boton-lista p-1 transition duration-3000 ease-in-out {{ isCollapsed ? 'w-16' : 'w-64' }}">
+    <li *ngFor="let subItem of item.subItems" class="sub-menu-item d-flex justify-content-center p-2" >
+      <a [routerLink]="subItem.link" class="sub-menu-link">
+        <i class="sub-menu-icon text-lg leading-relaxed p-1 bx {{ subItem.icon }}" *ngIf="subItem.icon"></i>
+        <span class="sub-menu-label text-lg leading-relaxed p-1" *ngIf="!isCollapsed">{{ subItem.label }}</span>
       </a>
     </li>
   </ul>
 </div>
+
 <div class="theme-switch">
   <label>
     <input type="checkbox" (change)="toggleTheme($event)">

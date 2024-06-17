@@ -3,33 +3,67 @@
 @import 'variables';
 @import 'mixins';
 @import 'typography';
+@import 'neomorphism'; // Importar el nuevo archivo de neomorfismo
 
 // Estilos básicos globales
 body {
   @include global-background($light-bg-color);
   @include global-text($light-text-color);
   @include primary-font;
-  font-size: $font-size-base !important;
+  font-size: $font-size-base;
   margin: 0;
   padding: 0;
 }
 
 // Estilos para enlaces
 a {
-  color: $primary-color;
-  text-decoration: none;
+  color: $primary-color !important;
+  text-decoration: none !important;
   border-radius: $neomorph-radius;
   padding: 5px 10px;
   box-shadow:
     $neomorph-shadow-size $neomorph-shadow-size $neomorph-shadow-size 0 $neomorph-shadow-dark,
-    (-$neomorph-shadow-size) (-$neomorph-shadow-size) $neomorph-shadow-size 0 $neomorph-shadow-light;
+    (-$neomorph-shadow-size) (-$neomorph-shadow-size) $neomorph-shadow-light;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: underline !important;
     box-shadow:
       $neomorph-shadow-size $neomorph-shadow-size $neomorph-shadow-size 0 rgba(0, 0, 0, 0.5),
       (-$neomorph-shadow-size) (-$neomorph-shadow-size) $neomorph-shadow-size 0 rgba(255, 255, 255, 0.5);
   }
+}
+
+// Botones de neomorfismo
+.button-primary {
+  @include button-normal;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    @include button-hover;
+  }
+
+  &:active {
+    @include button-active;
+  }
+
+  &:disabled {
+    @include button-disabled;
+  }
+
+  &:focus {
+    @include button-focus;
+  }
+}
+
+.button-inset {
+  @include button-inset;
+}
+
+.button-dark {
+  @include button-dark;
 }
 
 // Definir temas
@@ -38,7 +72,7 @@ a {
 }
 
 .dark-theme {
-  @include dark-theme ;
+  @include dark-theme;
 
   a {
     color: $dark-text-color !important;
@@ -50,6 +84,28 @@ a {
       box-shadow:
         $neomorph-shadow-size $neomorph-shadow-size $neomorph-shadow-size 0 rgba(255, 255, 255, 0.5),
         (-$neomorph-shadow-size) (-$neomorph-shadow-size) $neomorph-shadow-size 0 rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .button-primary {
+    @include button-dark;
+    background: darken($neomorph-bg-color, 10%);
+    color: $dark-text-color;
+
+    &:hover {
+      @include button-hover;
+    }
+
+    &:active {
+      @include button-active;
+    }
+
+    &:disabled {
+      @include button-disabled;
+    }
+
+    &:focus {
+      @include button-focus;
     }
   }
 }

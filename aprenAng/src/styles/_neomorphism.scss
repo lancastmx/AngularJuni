@@ -1,0 +1,68 @@
+// styles/_neomorphism.scss
+
+@import 'variables';
+
+// Mixin para el neomorfismo
+@mixin neomorph-normal {
+  border-radius: 12px;
+  background: #e0e0e0;
+  box-shadow: 8px 8px 15px #b3b3b3, -8px -8px 15px #ffffff;
+}
+
+@mixin neomorph-gradient {
+  border-radius: 12px;
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow: 8px 8px 15px #b3b3b3, -8px -8px 15px #ffffff;
+}
+
+@mixin neomorph-gradient-active {
+  border-radius: 12px;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow: inset 8px 8px 15px #b3b3b3, inset -8px -8px 15px #ffffff;
+}
+
+@mixin neomorph-inset {
+  border-radius: 12px;
+  background: #e0e0e0;
+  box-shadow: inset 8px 8px 15px #b3b3b3, inset -8px -8px 15px #ffffff;
+}
+
+// Modo oscuro
+@mixin neomorph-dark {
+  border-radius: 12px;
+  background: #2f2f2f;
+  box-shadow: 8px 8px 15px #1a1a1a, -8px -8px 15px #404040;
+}
+
+// Estados de los botones de neomorfismo
+@mixin button-normal {
+  @include neomorph-normal;
+}
+
+@mixin button-hover {
+  @include neomorph-gradient;
+}
+
+@mixin button-active {
+  @include neomorph-gradient-active;
+}
+
+@mixin button-inset {
+  @include neomorph-inset;
+}
+
+@mixin button-disabled {
+  @include neomorph-normal;
+  color: lighten(#bebebe, 30%);
+  cursor: not-allowed;
+}
+
+@mixin button-focus {
+  outline: 2px solid #d33c3c;
+  outline-offset: 2px;
+}
+
+// Botones de modo oscuro
+@mixin button-dark {
+  @include neomorph-dark;
+}

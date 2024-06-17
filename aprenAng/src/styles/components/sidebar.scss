@@ -3,33 +3,85 @@
 @import '../variables';
 @import '../mixins';
 
-.sidebar {
-  @include neomorph($light-bg-color);
-  color: $dark-text-color;
+// styles/sidebar.scss
 
-  .sidebar-item {
-    @include neomorph($light-bg-color);
-    color: $primary-color;
+@import '../neomorphism';
+
+.menu-item {
+  margin-bottom: 10px;
+}
+
+.menu-header {
+  @include neomorph-normal;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    @include neomorph-gradient;
   }
 
-  .theme-switch {
-    margin-top: 20px;
-    label {
-      color: $primary-color;
-    }
+  &:active {
+    @include neomorph-gradient-active;
   }
 }
 
-body.dark-theme .sidebar {
-  @include neomorph($dark-bg-color);
-  color: $light-text-color;
+.menu-icon {
+  color: #333;
+}
 
-  .sidebar-item {
-    @include neomorph($dark-bg-color);
-    color: $light-text-color;
+.menu-label {
+  color: #333;
+}
+
+.sub-menu {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sub-menu-item {
+  margin-bottom: 5px;
+
+  &:hover {
+    @include neomorph-gradient;
   }
 
-  .theme-switch label {
-    color: $light-text-color;
+  &:active {
+    @include neomorph-gradient-active;
   }
+}
+
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sub-menu-icon {
+  color: #666;
+}
+
+.sub-menu-label {
+  color: #666;
+}
+
+.dark-theme .menu-header,
+.dark-theme .sub-menu-item {
+  @include neomorph-dark;
+
+  &:hover {
+    @include neomorph-gradient;
+  }
+
+  &:active {
+    @include neomorph-gradient-active;
+  }
+}
+
+.dark-theme .menu-icon,
+.dark-theme .menu-label,
+.dark-theme .sub-menu-icon,
+.dark-theme .sub-menu-label {
+  color: #fff;
 }
