@@ -1,16 +1,6 @@
 import { IMenuItem } from "./interface/menu.interface";
 
-/**
- *
- * This is an Array for a Dynamic Menu
- *
- * **/
-
 export const MENU: IMenuItem[] = [
-  /*{
-        label: 'PROCESO DE VENTA',
-        isTitle: true
-    },*/
   {
     label: 'Dashboard',
     icon: 'bxs-dashboard',
@@ -40,29 +30,17 @@ export const MENU: IMenuItem[] = [
         subItems: [],
       },
       {
-        label: 'Luegares',
-        icon: 'bx-user-plus',
-        link: '/venues',
+        label: 'Artistas',
+        icon: 'bxs-user-account',
+        link: '/artistas',
         subItems: [],
       },
-      // {
-      //   label: 'Artistas',
-      //   icon: 'bxs-user-account',
-      //   link: '/admin/artists',
-      //   subItems: [],
-      // },
-      // {
-      //   label: 'Observaciones',
-      //   icon: 'bx-note',
-      //   link: '/admin/observations',
-      //   subItems: [],
-      // },
-      // {
-      //   label: 'Products',
-      //   icon: 'bxs-component',
-      //   link: '/venues',
-      //   subItems: [],
-      // },
+      {
+        label: 'Productos',
+        icon: 'bxs-component',
+        link: '/productos',
+        subItems: [],
+      },
     ],
   },
   {

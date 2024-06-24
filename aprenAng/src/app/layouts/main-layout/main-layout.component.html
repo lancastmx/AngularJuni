@@ -1,8 +1,11 @@
-
-<div class="container-fluid d-flex flex-row">
-  <div class="flex-shrink-0">  <app-sidebar></app-sidebar>
+<div class="d-flex min-vh-100">
+  <div class="d-flex flex-column flex-shrink-0 h-100">
+    <app-sidebar class="h-full"></app-sidebar>
   </div>
-  <div class="flex-grow-1">  <app-topbar></app-topbar>
-    <router-outlet></router-outlet>
+  <div class="d-flex flex-column flex-grow-1 mx-4">
+    <app-topbar></app-topbar>
+    <div class="flex-grow-1 p-4 mt-16 pt-4">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
